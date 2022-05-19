@@ -1,0 +1,34 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+#entrada {
+  block-size: auto;
+  background-color: rgb(232, 230, 228);
+  width: 10rem;
+  height: 10rem;
+}
+
+#random {
+  border: 1px solid black;
+  width: 10em;
+  height: 10em;
+}
+input {
+  width: 12.2em;
+}
+
+#padre {
+  align-self: center;
+  display: grid;
+  grid-template-columns: 6em 6em 6em 6em 6em;
+  grid-template-rows: 6em 6em 6em 6em;
+}
+#padre div {
+  border: 2px solid black;
+}
+
+div img {
+  width: 5.8em;
+  height: 5.8em;
+}
