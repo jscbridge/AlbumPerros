@@ -24,18 +24,12 @@ function random() {
         let i = 0;
         while (i < localStorage.length && !perroExist) {
           var infoDog = JSON.parse(localStorage.getItem(i));
-        //   console.log(localStorage.getItem(i))
           perroExist = perroExist || nombreRaza == infoDog.nombreRaza;
           i++;
         }
-        
         if (perroExist) {
-          console.log("REPEEE");
           var infoPerro = JSON.parse(localStorage.getItem(i));
-          console.log(infoPerro)
           infoPerro.contador = infoPerro.contador + 1;
-        //   console.log(`${infoPerro.position}. ${infoPerro.nombreRaza} está repetido ${infoPerro.contador}`)
-
           localStorage.setItem(infoPerro.position, JSON.stringify(infoPerro));
         } else {
           var dog = new Perro(position, nombreRaza, 1, url);
@@ -45,8 +39,6 @@ function random() {
         pintar();
       });
   } else {
-    console.log("TENEMOS A TODOS!!!!!");
-
     var soloRaza = [];
     var soloContadores = [];
     var info = localStorage;
@@ -78,14 +70,6 @@ function random() {
     };
 
     const myChart = new Chart(document.getElementById("myChart"), config);
-
-    new Chartist.Bar('.ct-chart', {
-        labels: soloRaza,
-        series: soloContadores
-      }, {
-        distributeSeries: true
-      });
-      
   }
 }
 //! Pinta el album
@@ -98,7 +82,7 @@ function pintar() {
 }
 
 //! Resetea y refresca
-function reset(){
-    location.reload();
-    localStorage.clear();
+function reset() {
+  location.reload();
+  localStorage.clear();
 }
